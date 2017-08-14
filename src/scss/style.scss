@@ -1,0 +1,68 @@
+//area para importar
+@import 'variables';
+@import "funciones";
+@import "mixin";
+
+
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+.row{
+  &:before{
+    content: "";
+    display: table;
+  }
+  &:after{
+    @extend .row:before;
+    clear:both;
+  }
+}
+[class*="col-"]{
+  min-width: 7px;
+  padding: 12px;
+  float: left;
+}
+//imagenes
+header{
+  div.col-10{
+    text-align: center;
+  }
+
+}
+ul{
+  margin-left: 25%;
+
+  li{
+    display: inline-block;
+    margin: 20px
+  }
+}
+
+img{
+  max-width: 100%;
+}
+
+section{
+  border-bottom: 2px solid blue;
+  .linea__azul{
+    @extend section ;
+  }
+}
+
+
+header{
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
